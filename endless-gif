@@ -1,0 +1,7 @@
+#load animator package
+library(gifski)
+
+#Set up frames for the gif
+frames <- list.files("/images/folder/location/", pattern =".*png", full.names = TRUE)
+#Make that gif RIGHT NOW
+gifski(frames, gif_file = "johngoblikon_tinder.gif", width = 300, height = 300, delay = 1)
