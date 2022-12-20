@@ -1,0 +1,14 @@
+library(tanaka)
+library(terra)
+library(elevatr)
+
+#use epsg.io or bboxfinder.com to find CRS or browse locations
+
+#christmas island bbox and elevation data
+elev_rast = get_elev_raster(locations = data.frame
+                           (x = c(105.495300, 105.734940),
+                             y = c(-10.580791, -10.379695)
+                           ), z = 10, prj = "EPSG:4326", clip = "locations")
+rast <- rast(elev_rast)
+# display the map in plots
+tanaka(rast, breaks = seq(100,400,50), col = hcl.colors (10, "ag-Sunset"))
